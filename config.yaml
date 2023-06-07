@@ -1,0 +1,32 @@
+## Where the samples will be written
+save_data: toy-ende/run/example
+## Where the vocab(s) will be written
+src_vocab: toy-ende/run/example.vocab.src
+tgt_vocab: toy-ende/run/example.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: /content/nmt/sn_sentences_train.txt
+        path_tgt: /content/nmt/en_sentences_train.txt
+    valid:
+        path_src: /content/nmt/sn_sentences_validation.txt
+        path_tgt: /content/nmt/en_sentences_validation.txt
+
+
+# Vocabulary files that were just created
+src_vocab: toy-ende/run/example.vocab.src
+tgt_vocab: toy-ende/run/example.vocab.tgt
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: toy-ende/run/model
+save_checkpoint_steps: 500
+train_steps: 2000
+valid_steps: 500
+
